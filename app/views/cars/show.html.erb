@@ -1,0 +1,18 @@
+-<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Тип:</strong>
+  <%= @car.type %>
+</p>
+<p>
+  <strong>Up place count:</strong>
+  <%= @car.up_place_count %>
+</p>
+
+<p>
+  <strong>Down place count:</strong>
+  <%= @car.down_place_count %>
+</p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

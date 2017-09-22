@@ -1,5 +1,7 @@
 class CreateTrains < ActiveRecord::Migration[5.1]
-  def change
+  def up
+    drop_table :trains
+
     create_table :trains do |t|
       t.string :number
 

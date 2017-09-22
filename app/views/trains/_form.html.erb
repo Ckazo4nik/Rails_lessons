@@ -15,6 +15,10 @@
     <%= form.label :number %>
     <%= form.text_field :number, id: :train_number %>
   </div>
+    <div class="field">
+    <%= form.label :route, "Маршрут зараз" %>
+    <%= form.collection_select :route_id, Route.all, :id, :name %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
