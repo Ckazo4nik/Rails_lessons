@@ -11,11 +11,16 @@
     </div>
   <% end %>
 
-    <div class="form-group">
-      <%= form.label :type %>
-      <%= form.text_field :type, id: :car_type %>
-    </div>
+  <div class="field">
+    <%= form.label :tipe %>
+    <%= form.text_field :tipe, id: :car_tipe %>
+  </div>
     <div class="field">
+    <%= form.label :Train_id, "Виберіть потяг" %>
+    <%= form.collection_select :train_id,Train.all, :id ,:number %>
+  </div>
+
+  <div class="field">
     <%= form.label :up_place_count %>
     <%= form.number_field :up_place_count, id: :car_up_place_count %>
   </div>
@@ -23,10 +28,6 @@
   <div class="field">
     <%= form.label :down_place_count %>
     <%= form.number_field :down_place_count, id: :car_down_place_count %>
-  </div>
-<div class="field">
-    <%= form.label :train, "Список поїздів" %>
-    <%= form.collection_select :train_id, Train.all, :id ,:number  %>
   </div>
 
   <div class="actions">
