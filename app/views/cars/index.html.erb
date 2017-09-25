@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Type</th>
+      <th>Номер</th>
       <th>Up place count</th>
       <th>Down place count</th>
       <th colspan="3"></th>
@@ -13,14 +15,7 @@
 
   <tbody>
     <% @cars.each do |car| %>
-      <tr>
-        <td><%= car.type %></td>
-        <td><%= car.up_place_count %></td>
-        <td><%= car.down_place_count %></td>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render car %>
     <% end %>
   </tbody>
 </table>

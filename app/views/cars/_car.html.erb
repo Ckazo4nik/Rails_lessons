@@ -1,0 +1,9 @@
+<tr>
+  <td><%= car.tipe %></td>
+  <td><%= car.train.number %></td>
+  <td><%= car.up_place_count %></td>
+  <td><%= car.down_place_count %></td>
+  <td><%= link_to 'Show', car %></td>
+  <td><%= link_to 'Edit', edit_car_path(car) %></td>
+  <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

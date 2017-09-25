@@ -1,0 +1,34 @@
+<%= form_with(model: ticket, local: true) do |form| %>
+  <% if ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% ticket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :ticket_first_name %>
+  </div>
+    <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :ticket_last_name %>
+  </div>
+    <div class="field">
+    <%= form.label :route, "Маршрут зараз" %>
+    <%= form.collection_select :route_id, Route.all, :id, :name %>
+  </div>
+    <div class="field">
+    <%= form.label :train, "GПотяг зараз" %>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
